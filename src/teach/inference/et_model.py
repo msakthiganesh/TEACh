@@ -8,10 +8,11 @@ from typing import List
 
 import numpy as np
 import torch
-from alfred import constants
-from alfred.data import GuidesEdhDataset
-from alfred.data.preprocessor import Preprocessor
-from alfred.utils import data_util, eval_util, model_util
+# Fixed import statements
+from teach.modeling.ET.alfred import constants
+from teach.modeling.ET.alfred.data import GuidesEdhDataset
+from teach.modeling.ET.alfred.data.preprocessor import Preprocessor
+from teach.modeling.ET.alfred.utils import data_util, eval_util, model_util
 
 from teach.inference.actions import obj_interaction_actions
 from teach.inference.teach_model import TeachModel
@@ -67,9 +68,11 @@ class ETModel(TeachModel):
     def set_up_model(self, process_index):
         os.makedirs(self.args.dout, exist_ok=True)
         model_path = os.path.join(self.args.model_dir, self.args.checkpoint)
+        print(f"========================== Model path : {model_path}")
         logger.info("Loading model from %s" % model_path)
-
+        print(f"========================== Model not loaded")
         self.et_model_args = model_util.load_model_args(model_path)
+        print(f"========================== Model loaded")
         dataset_info = data_util.read_dataset_info_for_inference(self.args.model_dir)
         train_data_name = self.et_model_args.data["train"][0]
         train_vocab = data_util.load_vocab_for_inference(self.args.model_dir, train_data_name)
