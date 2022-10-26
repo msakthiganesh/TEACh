@@ -2,12 +2,12 @@ import logging
 
 import numpy as np
 import torch
-from alfred.model import base
-from alfred.nn.enc_lang import EncoderLang
-from alfred.nn.enc_visual import FeatureFlat
-from alfred.nn.enc_vl import EncoderVL
-from alfred.nn.encodings import PosLangEncoding
-from alfred.utils import model_util
+from teach.modeling.ET.alfred.model import base
+from teach.modeling.ET.alfred.nn.enc_lang import EncoderLang
+from teach.modeling.ET.alfred.nn.enc_visual import FeatureFlat
+from teach.modeling.ET.alfred.nn.enc_vl import EncoderVL
+from teach.modeling.ET.alfred.nn.encodings import PosLangEncoding
+from teach.modeling.ET.alfred.utils import model_util
 from torch import nn
 from torch.nn import functional as F
 

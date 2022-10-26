@@ -1,4 +1,4 @@
-from alfred.utils import data_util
+from teach.modeling.ET.alfred.utils import data_util
 from torch import nn
 
 

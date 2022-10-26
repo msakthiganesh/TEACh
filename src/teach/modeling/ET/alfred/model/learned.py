@@ -5,10 +5,11 @@ import os
 from importlib import import_module
 
 import gtimer as gt
-from alfred.utils import data_util, model_util
+from teach.modeling.ET.alfred.utils import data_util, model_util
 from tensorboardX import SummaryWriter
 from torch import nn
 from tqdm import tqdm
+import teach.modeling.ET.alfred.model.base as alfred_model_class
 
 from teach.logger import create_logger
 
@@ -29,7 +30,8 @@ class LearnedModel(nn.Module):
         # summary self.writer
         self.summary_writer = None
         # create the model to be trained
-        ModelClass = import_module("alfred.model.{}".format(args.model)).Model
+        ModelClass = import_module("teach.modeling.ET.alfred.model.{}".format(args.model)).Model
+        # ModelClass = alfred_model_class
         self.model = ModelClass(args, embs_ann, vocab_out, self.pad, self.seg, for_inference)
 
     def run_train(self, loaders, info, optimizer=None):

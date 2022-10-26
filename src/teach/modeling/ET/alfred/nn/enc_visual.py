@@ -6,9 +6,9 @@ import types
 import numpy as np
 import torch
 import torch.nn as nn
-from alfred import constants
-from alfred.nn.transforms import Transforms
-from alfred.utils import data_util
+from teach.modeling.ET.alfred import constants
+from teach.modeling.ET.alfred.nn.transforms import Transforms
+from teach.modeling.ET.alfred.utils import data_util
 from torchvision import models
 from torchvision.transforms import functional as F
 

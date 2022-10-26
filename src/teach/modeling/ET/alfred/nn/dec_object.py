@@ -1,7 +1,7 @@
 import os
 
 import torch
-from alfred import constants
+from teach.modeling.ET.alfred import constants
 from torch import nn
 
 

@@ -7,9 +7,12 @@ from importlib import import_module
 
 import numpy as np
 import torch
-from alfred import constants
-from alfred.utils import metric_util
+from teach.modeling.ET.alfred import constants
+from teach.modeling.ET.alfred.utils import metric_util
 from torch.nn import functional as F
+
+import teach.modeling.ET.alfred.model.learned as alfred_model_learned
+
 
 from teach.logger import create_logger
 
@@ -89,7 +92,8 @@ def load_model(fsave, device, check_epoch=None, for_inference=False):
     """
     logger.info("Loading from {} to {}".format(fsave, device))
     save = torch.load(fsave, map_location=device)
-    LearnedModel = import_module("alfred.model.learned").LearnedModel
+    # LearnedModel = import_module("teach.modeling.ET.alfred.model.learned").LearnedModel
+    LearnedModel = alfred_model_learned.LearnedModel
     save["args"]["model_dir"] = os.path.dirname(fsave)
     model = LearnedModel(save["args"], save["embs_ann"], save["vocab_out"], for_inference)
     model.load_state_dict(save["model"])
@@ -107,7 +111,11 @@ def load_model_args(fsave):
     """
     load model's args from disk
     """
-    save = torch.load(fsave, map_location=lambda storage, loc: storage)
+    print(f"!!!!!!!!!!!!!!!!!! Tryingg")
+    print(fsave)
+    # save = torch.load(fsave, map_location=lambda storage, loc: storage)
+    save = torch.load(fsave, map_location=torch.device('cpu'))
+    print(f"!!!!!!!!!!!!!!!!!! Done!")
     return save["args"]
 
 

@@ -1,7 +1,7 @@
 import logging
 
-from alfred.nn.enc_visual import FeatureExtractor
-from alfred.utils import model_util
+from teach.modeling.ET.alfred.nn.enc_visual import FeatureExtractor
+from teach.modeling.ET.alfred.utils import model_util
 
 from teach.logger import create_logger
 

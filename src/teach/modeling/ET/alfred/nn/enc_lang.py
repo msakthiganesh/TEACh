@@ -1,5 +1,5 @@
 import torch
-from alfred.nn.encodings import InstrLangEncoding, PosLangEncoding
+from teach.modeling.ET.alfred.nn.encodings import InstrLangEncoding, PosLangEncoding
 from torch import nn
 
 

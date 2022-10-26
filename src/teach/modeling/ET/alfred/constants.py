@@ -2,7 +2,6 @@ import os
 
 ########################################################################################################################
 # General Settings
-
 ET_ROOT = os.environ["ET_ROOT"]
 ET_DATA = os.environ["ET_DATA"] if "ET_DATA" in os.environ else None
 ET_LOGS = os.environ["ET_LOGS"] if "ET_LOGS" in os.environ else None

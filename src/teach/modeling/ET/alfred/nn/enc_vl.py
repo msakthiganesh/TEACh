@@ -1,6 +1,6 @@
 import torch
-from alfred.nn.encodings import PosEncoding, PosLearnedEncoding, TokenLearnedEncoding
-from alfred.utils import model_util
+from teach.modeling.ET.alfred.nn.encodings import PosEncoding, PosLearnedEncoding, TokenLearnedEncoding
+from teach.modeling.ET.alfred.utils import model_util
 from torch import nn
 
 
