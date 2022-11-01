@@ -1,5 +1,5 @@
 .DS_Store
-data/
+full_data/
 data2/
 data3/
 data4/
@@ -8,3 +8,6 @@ temp/
 __pycache__
 data6/
 data7/
+data8/
+data_struct/
+**.zip
